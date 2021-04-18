@@ -1,0 +1,41 @@
+{
+    "name": "thehandy-react",
+    "version": "1.0.0",
+    "description": "React utility components for working with The Handy automatic stroker",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack-dev-server --open development",
+        "build": "webpack --mode production",
+        "deploy": "webpack --config publish.config.js --mode production && npm publish",
+        "format": "prettier --write ."
+    },
+    "author": "Defucilis",
+    "license": "ISC",
+    "peerDependencies": {
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.13.0",
+        "@types/react": "^17.0.3",
+        "@types/react-dom": "^17.0.3",
+        "@types/react-router-dom": "^5.1.7",
+        "babel-loader": "^8.0.6",
+        "html-webpack-plugin": "^3.2.0",
+        "prettier": "^2.2.1",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "typescript": "^4.2.4",
+        "webpack": "^4.39.3",
+        "webpack-cli": "^3.3.7",
+        "webpack-dev-server": "^3.8.0"
+    },
+    "dependencies": {
+        "thehandy": "^0.2.7"
+    }
+}
