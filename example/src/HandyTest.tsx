@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useHandy from "../../src/HandyReact";
+import useHandy from "../../src";
 
 const HandyTest = () => {
     const { handy } = useHandy();

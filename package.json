@@ -1,17 +1,32 @@
 {
     "name": "thehandy-react",
-    "version": "1.0.0",
+    "version": "0.2.7",
     "description": "React utility components for working with The Handy automatic stroker",
+    "author": "Defucilis",
+    "license": "MIT",
+    "homepage": "https://github.com/defucilis/thehandy-react",
+    "bugs": {
+      "url": "https://github.com/defucilis/thehandy-react/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/defucilis/thehandy-react.git"
+    },
+    "keywords": [
+      "handy",
+      "funscript",
+      "the handy",
+      "thehandy",
+      "react"
+    ],
     "main": "dist/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack-dev-server --open development",
-        "build": "webpack --mode production",
+        "build": "webpack --mode production --config publish.config.js",
         "deploy": "webpack --config publish.config.js --mode production && npm publish",
         "format": "prettier --write ."
     },
-    "author": "Defucilis",
-    "license": "ISC",
     "peerDependencies": {
         "react": "^16.9.0",
         "react-dom": "^16.9.0"
