@@ -1,25 +1,34 @@
 import React, { useState } from "react";
+import { HandyMode } from "thehandy/lib/types";
 import useHandy from "../../src";
 
 const HandyTest = () => {
-    const { handy } = useHandy();
+    const {
+        connectionKey,
+        connect,
+        getInfo,
+        sendMode,
+        sendHampStart,
+        sendHampStop,
+        sendHampVelocity,
+    } = useHandy();
     const [versionResponse, setVersionResponse] = useState("");
 
     return (
         <div>
-            <p>Connection key is {handy.connectionKey}</p>
+            <p>Connection key is {connectionKey}</p>
             <label htmlFor="connectionKey">Set Connection Key </label>
-            <input onChange={e => (handy.connectionKey = e.target.value)} />
+            <input onChange={e => connect(e.target.value)} />
             <br />
             <br />
             <button
                 onClick={() =>
-                    handy
-                        .getVersion()
-                        .then(response => setVersionResponse(JSON.stringify(response, null, 2)))
+                    getInfo().then(response =>
+                        setVersionResponse(JSON.stringify(response, null, 2))
+                    )
                 }
             >
-                Get Firmware Version
+                Get Machine Info
             </button>
             <br />
             <textarea disabled={true} rows={8} cols={32}>
@@ -27,10 +36,16 @@ const HandyTest = () => {
             </textarea>
             <br />
             <br />
-            <button onClick={() => handy.toggleMode(1)}>Toggle Auto Mode</button>
+            <button onClick={() => sendMode(HandyMode.hamp)}>Set HAMP Mode</button>
             <br />
             <br />
-            <button onClick={() => handy.setSpeed(Math.random() * 100)}>Randomize Speed</button>
+            <button onClick={() => sendHampStart()}>HAMP Start</button>
+            <br />
+            <br />
+            <button onClick={() => sendHampStop()}>HAMP Stop</button>
+            <br />
+            <br />
+            <button onClick={() => sendHampVelocity(Math.random() * 100)}>Randomize Speed</button>
         </div>
     );
 };

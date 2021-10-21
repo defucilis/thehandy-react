@@ -4,7 +4,7 @@ import { HandyProvider } from "../../src";
 import HandyTest from "./HandyTest";
 
 render(
-    <HandyProvider>
+    <HandyProvider verbose={true}>
         <HandyTest />
     </HandyProvider>,
     document.getElementById("root")

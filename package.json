@@ -1,23 +1,23 @@
 {
     "name": "thehandy-react",
-    "version": "0.2.8",
+    "version": "2.0.0",
     "description": "React utility components for working with The Handy automatic stroker",
     "author": "Defucilis",
     "license": "MIT",
     "homepage": "https://github.com/defucilis/thehandy-react",
     "bugs": {
-      "url": "https://github.com/defucilis/thehandy-react/issues"
+        "url": "https://github.com/defucilis/thehandy-react/issues"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/defucilis/thehandy-react.git"
+        "type": "git",
+        "url": "https://github.com/defucilis/thehandy-react.git"
     },
     "keywords": [
-      "handy",
-      "funscript",
-      "the handy",
-      "thehandy",
-      "react"
+        "handy",
+        "funscript",
+        "the handy",
+        "thehandy",
+        "react"
     ],
     "main": "dist/index.js",
     "scripts": {
@@ -28,8 +28,8 @@
         "format": "prettier --write ."
     },
     "peerDependencies": {
-        "react": "^16.9.0",
-        "react-dom": "^16.9.0"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "devDependencies": {
         "@babel/cli": "^7.5.5",
@@ -37,8 +37,8 @@
         "@babel/preset-env": "^7.5.5",
         "@babel/preset-react": "^7.0.0",
         "@babel/preset-typescript": "^7.13.0",
-        "@types/react": "^17.0.3",
-        "@types/react-dom": "^17.0.3",
+        "@types/react": "^17.0.2",
+        "@types/react-dom": "^17.0.2",
         "@types/react-router-dom": "^5.1.7",
         "babel-loader": "^8.0.6",
         "html-webpack-plugin": "^3.2.0",
@@ -51,6 +51,6 @@
         "webpack-dev-server": "^3.8.0"
     },
     "dependencies": {
-        "thehandy": "^0.2.7"
+        "thehandy": "^1.0.2"
     }
 }

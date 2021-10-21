@@ -27,38 +27,44 @@ thehandy uses [React Context](https://reactjs.org/docs/context.html) to ensure t
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { HandyProvider } from 'thehandy'
+import { HandyProvider } from "thehandy";
 
 ReactDOM.render(
     <HandyProvider>
-      <App />
+        <App />
     </HandyProvider>,
-  document.getElementById("root")
+    document.getElementById("root")
 );
 
 export default App;
 ```
 
-Now, you can access the device using the `useHandy` hook:
+Now, you can access various features of the Handy using the `useHandy` hook
 
 ```js
 import React from "react";
-import { useHandy } from "thehandy";
+import useHandy from "thehandy";
 
 const App = () => {
-  const {handy} = useHandy();
-  
+  const {connectionKey, connect, sendMode, sendHampStart, sendHampStop, sendHampVelocity} = useHandy();
+
   return (
-    <p>Connection key is {handy.connectionKey}</p>
-    <input onChange={e => handy.connectionKey = e.target.value} />
-    <button onClick={() => handy.toggleMode(1)}>Toggle Auto Mode</button>
-    <button onClick={() => handy.setSpeed(Math.random() * 100)}>Randomize Speed</button>
+    <p>Connection key is {connectionKey}</p>
+    <input onChange={e => connect(e.target.value)} />
+    <button onClick={() => sendMode(0)}>Set HAMP</button>
+    <button onClick={() => sendHampStart()}>Start HAMP</button>
+    <button onClick={() => sendHampStop()}>Stop HAMP</button>
+    <button onClick={() => sendHampVelocity(Math.random() * 100)}>Randomize Speed</button>
   )
 }
 
 export default App;
 ```
 
+Note that this package attempts to keep track of the Handy's state in the `handyState` property of the `useHandy` hook. This is generally pretty accurate,
+but is **not** guaranteed to be so, since the Handy's state can be changed by the user, or by other applications, without this library knowing about it.
+So bear that in mind if you rely on `handyState` for your application's logic.
+
 ## Handy API Reference
 
-See the documentation for my base package [thehandy](https://github.com/defucilis/thehandy) for information on how to send and receive information from a Handy device
+See the documentation for my base package [thehandy](https://github.com/defucilis/thehandy) for information on how to send and receive information from a Handy device. Note that the functions that begin with 'set' are instead prefixed with 'send' in the react wrapper, to avoid confusion with setter functions in useState hooks.
