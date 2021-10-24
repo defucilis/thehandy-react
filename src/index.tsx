@@ -282,7 +282,7 @@ const useHandyReact = (verbose?: boolean): UseHandy => {
         try {
             const result = await handy.getConnected();
             setHandyState(cur => ({ ...cur, connected: result }));
-            return true;
+            return result;
         } catch (error: any) {
             setError(error.message);
             setHandyState(cur => ({ ...cur, connected: handy.connected }));
