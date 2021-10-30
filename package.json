@@ -1,6 +1,6 @@
 {
     "name": "thehandy-react",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "React utility components for working with The Handy automatic stroker",
     "author": "Defucilis",
     "license": "MIT",
@@ -51,6 +51,6 @@
         "webpack-dev-server": "^3.8.0"
     },
     "dependencies": {
-        "thehandy": "^1.0.2"
+        "thehandy": "latest"
     }
 }
