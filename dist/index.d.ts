@@ -1,7 +1,10 @@
 import { ReactNode } from "react";
 import { HampState, HandyInfo, HandyMode, HandySettings, HsspState } from "thehandy/lib/types";
 /** Context provider for the Handy - wrap your app in it! */
-declare const HandyProvider: ({ verbose, children, }: {
+declare const HandyProvider: ({
+    verbose,
+    children,
+}: {
     verbose?: boolean | undefined;
     children: ReactNode;
 }) => JSX.Element;
@@ -49,15 +52,35 @@ interface UseHandy {
     /** Sets the current HAMP velocity, from 0 - 100. Puts the Handy in HAMP mode first, if it isn't already in HAMP mode */
     sendHampVelocity: (velocity: number) => Promise<void>;
     /** Sets the next absolute position (xa) of the device, and the absolute velocity (va) the device should use to reach the position. Puts the Handy in HDSP mode, if it isn't already in HDSP mode */
-    sendHdspXaVa: (positionAbsolute: number, velocityAbsolute: number, stopOnTarget?: boolean) => Promise<void>;
+    sendHdspXaVa: (
+        positionAbsolute: number,
+        velocityAbsolute: number,
+        stopOnTarget?: boolean
+    ) => Promise<void>;
     /** Sets the next percent position (xp) of the device, and the absolute velocity (va) the device should use to reach the position. Puts the Handy in HDSP mode, if it isn't already in HDSP mode */
-    sendHdspXpVa: (positionPercentage: number, velocityAbsolute: number, stopOnTarget?: boolean) => Promise<void>;
+    sendHdspXpVa: (
+        positionPercentage: number,
+        velocityAbsolute: number,
+        stopOnTarget?: boolean
+    ) => Promise<void>;
     /** Sets the next percent position (xp) of the device, and the percent velocity (vp) the device should use to reach the position. Puts the Handy in HDSP mode, if it isn't already in HDSP mode */
-    sendHdspXpVp: (positionPercentage: number, velocityPercentage: number, stopOnTarget?: boolean) => Promise<void>;
+    sendHdspXpVp: (
+        positionPercentage: number,
+        velocityPercentage: number,
+        stopOnTarget?: boolean
+    ) => Promise<void>;
     /** Sets the next absolute position (xa) of the device, and the time (t) the device should use to reach the position. Puts the Handy in HDSP mode, if it isn't already in HDSP mode */
-    sendHdspXaT: (positionAbsolute: number, durationMilliseconds: number, stopOnTarget?: boolean) => Promise<void>;
+    sendHdspXaT: (
+        positionAbsolute: number,
+        durationMilliseconds: number,
+        stopOnTarget?: boolean
+    ) => Promise<void>;
     /** Sets the next percent position (xp) of the device, and the time (t) the device should use to reach the position. Puts the Handy in HDSP mode, if it isn't already in HDSP mode */
-    sendHdspXpT: (positionPercentage: number, durationMilliseconds: number, stopOnTarget?: boolean) => Promise<void>;
+    sendHdspXpT: (
+        positionPercentage: number,
+        durationMilliseconds: number,
+        stopOnTarget?: boolean
+    ) => Promise<void>;
     /** Starts HSSP playback, if a script has already been prepared. Can be used to skip to a timecode in ms from the start of the script. Pass in an estimated server time to ensure proper sync. Puts the handy in HSSP mode, if it isn't already in HSSP mode. */
     sendHsspPlay: (playbackPosition?: number, serverTime?: number) => Promise<void>;
     /** Stops HSSP playback, if a script has already been prepared. Puts the handy in HSSP mode, if it isn't already in HSSP mode. */
@@ -79,7 +102,10 @@ interface UseHandy {
     /** Gets the current round-trip delay from the Handy to the server and back, in milliseconds. Used for synchronization. */
     getHstpRtd: () => Promise<number>;
     /** Syncronizes the device with the server clock and calculates the round-trip-delay between the device and the server. As far as I can tell, this just doesn't work. I suggest using getServerTimeOffset instead. */
-    getHstpSync: (syncCount?: number, outliers?: number) => Promise<{
+    getHstpSync: (
+        syncCount?: number,
+        outliers?: number
+    ) => Promise<{
         time: number;
         rtd: number;
     }>;
@@ -97,7 +123,10 @@ interface UseHandy {
     /** Sets the max slide position, from 0 - 100. If fixed is true, then the device will attempt to maintain the same distance between min and max */
     sendSlideMax: (max: number, fixed?: boolean) => Promise<void>;
     /** Gets the offset, in milliseconds, between the Handy and the HandyFeeling servers. Updates estimatedServerTimeOffset */
-    getServerTimeOffset: (trips?: number, onProgress?: (progress: number) => void) => Promise<number>;
+    getServerTimeOffset: (
+        trips?: number,
+        onProgress?: (progress: number) => void
+    ) => Promise<number>;
 }
 interface HandyState {
     /** Whether the Handy is currently connected, to the best of its knowledge */
