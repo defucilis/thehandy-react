@@ -1,5 +1,20 @@
 import { ReactNode } from "react";
-import { HampState, HandyInfo, HandyMode, HandySettings, HsspState } from "thehandy/lib/types";
+import {
+    HampState,
+    HandyInfo,
+    HandyMode,
+    HandySettings,
+    HandyStatus,
+    HsspState,
+    GenericResult,
+    HandyFirmwareStatus,
+    HsspSetupResult,
+    SetHampStateResult,
+    SetHdspResult,
+    SetModeResult,
+    CsvUploadResponse,
+    SlideInfo,
+} from "thehandy";
 /** Context provider for the Handy - wrap your app in it! */
 declare const HandyProvider: ({
     verbose,
@@ -163,5 +178,21 @@ interface HandyState {
     slidePositionAbsolute: number;
 }
 export { HandyProvider };
+export {
+    HampState,
+    HandyInfo,
+    HandyMode,
+    HandySettings,
+    HandyStatus,
+    HsspState,
+    GenericResult,
+    HandyFirmwareStatus,
+    HsspSetupResult,
+    SetHampStateResult,
+    SetHdspResult,
+    SetModeResult,
+    CsvUploadResponse,
+    SlideInfo,
+};
 export default useHandy;
 //# sourceMappingURL=index.d.ts.map

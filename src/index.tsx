@@ -6,7 +6,15 @@ import {
     HandySettings,
     HandyStatus,
     HsspState,
-} from "thehandy/lib/types";
+    GenericResult,
+    HandyFirmwareStatus,
+    HsspSetupResult,
+    SetHampStateResult,
+    SetHdspResult,
+    SetModeResult,
+    CsvUploadResponse,
+    SlideInfo,
+} from "thehandy";
 import Handy from "thehandy";
 
 const reactHandyContext = createContext<UseHandy | null>(null);
@@ -1129,4 +1137,20 @@ const useHandyReact = (verbose?: boolean): UseHandy => {
 };
 
 export { HandyProvider };
+export {
+    HampState,
+    HandyInfo,
+    HandyMode,
+    HandySettings,
+    HandyStatus,
+    HsspState,
+    GenericResult,
+    HandyFirmwareStatus,
+    HsspSetupResult,
+    SetHampStateResult,
+    SetHdspResult,
+    SetModeResult,
+    CsvUploadResponse,
+    SlideInfo,
+};
 export default useHandy;
