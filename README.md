@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <a href='https://www.npmjs.com/package/thehandy'>
+  <a href='https://www.npmjs.com/package/thehandy-react'>
       <img src="https://img.shields.io/npm/v/thehandy-react.svg" />
   </a>
   <a href='https://simple.wikipedia.org/wiki/MIT_License'>
